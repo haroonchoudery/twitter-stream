@@ -8,12 +8,13 @@
 
 import psycopg2
 
-conn = psycopg2.connect(dbname="Tcount", user="postgres", password="pass", host="localhost", port="5432")
+conn = psycopg2.connect(database="postgres", user="postgres", password="pass", host="localhost", port="5432")
 
+dbname = "Tcount"
 #Create a Table
 #The first step is to create a cursor. 
-
 cur = conn.cursor()
+cur.execute('CREATE DATABASE ' + dbname)
 cur.execute('''CREATE TABLE Tweetwordcount
        (word TEXT PRIMARY KEY     NOT NULL,
        count INT     NOT NULL);''')
