@@ -30,24 +30,24 @@ conn.close()
 #and then read the query result a few rows at a time. One reason for doing this is
 #to avoid memory overrun when the result contains a large number of rows. 
 
-cur = conn.cursor()
+# cur = conn.cursor()
 
-#Insert
-cur.execute("INSERT INTO Tweetwordcount (word,count) \
-      VALUES ('test', 1)");
-conn.commit()
+# #Insert
+# cur.execute("INSERT INTO Tweetwordcount (word,count) \
+#       VALUES ('test', 1)");
+# conn.commit()
 
-#Update
-#Assuming you are passing the tuple (uWord, uCount) as an argument
-cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (uWord, uCount))
-conn.commit()
+# #Update
+# #Assuming you are passing the tuple (uWord, uCount) as an argument
+# cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (uWord, uCount))
+# conn.commit()
 
-#Select
-cur.execute("SELECT word, count from Tweetwordcount")
-records = cur.fetchall()
-for rec in records:
-   print "word = ", rec[0]
-   print "count = ", rec[1], "\n"
-conn.commit()
+# #Select
+# cur.execute("SELECT word, count from Tweetwordcount")
+# records = cur.fetchall()
+# for rec in records:
+#    print "word = ", rec[0]
+#    print "count = ", rec[1], "\n"
+# conn.commit()
 
-conn.close()
+# conn.close()
