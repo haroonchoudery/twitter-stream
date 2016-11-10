@@ -5,7 +5,20 @@ from streamparse.bolt import Bolt
 import psycopg2
 
 
-conn = psycopg2.connect(database="Tcount", user="postgres", password="pass", host="localhost", port="5432")
+conn = psycopg2.connect(database="postgres", user="postgres", password="pass", host="localhost", port="5432")
+conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+
+dbname = "Tcount"
+#Create a Table
+#The first step is to create a cursor. 
+cur = conn.cursor()
+cur.execute('CREATE DATABASE ' + dbname)
+cur.execute('''CREATE TABLE Tweetwordcount
+       (word TEXT PRIMARY KEY     NOT NULL,
+       count INT     NOT NULL);''')
+conn.commit()
+conn.close()
+
 cur = conn.cursor()
 
 class WordCounter(Bolt):
