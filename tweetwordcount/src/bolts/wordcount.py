@@ -3,6 +3,7 @@ from __future__ import absolute_import, print_function, unicode_literals
 from collections import Counter
 from streamparse.bolt import Bolt
 
+conn = psycopg2.connect(database="Tcount", user="postgres", password="pass", host="localhost", port="5432")
 cur = conn.cursor()
 
 class WordCounter(Bolt):
