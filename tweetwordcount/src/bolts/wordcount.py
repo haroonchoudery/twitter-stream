@@ -39,13 +39,6 @@ class WordCounter(Bolt):
         else:
             cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (count+1, word))
             conn.commit()
-        #Update
-        #Assuming you are passing the tuple (uWord, uCount) as an argument
-        
-        
-
-        
-
 
         # Increment the local count
         self.counts[word] += 1
