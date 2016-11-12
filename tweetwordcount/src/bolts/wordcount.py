@@ -35,11 +35,10 @@ class WordCounter(Bolt):
         # you need to create both the database and the table in advance.
 
         if (word in self.counts) == False:
-            cur.execute("INSERT INTO tweetwordcount (word,count) \
-                  VALUES (word, 1)");
+            cur.execute("INSERT INTO tweetwordcount (word,count) VALUES (%s, 1)", (word));
             conn.commit()
         else:
-            cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (count+1, word))
+            cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (count + 1, word))
             conn.commit()
 
         # Increment the local count

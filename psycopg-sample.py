@@ -33,8 +33,7 @@ conn.close()
 cur = conn.cursor()
 
 #Insert
-cur.execute("INSERT INTO Tweetwordcount (word,count) \
-      VALUES ('test', 1)");
+cur.execute("INSERT INTO Tweetwordcount (word,count) VALUES ('test', 1)");
 conn.commit()
 
 #Update
