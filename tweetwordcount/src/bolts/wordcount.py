@@ -5,11 +5,11 @@ from streamparse.bolt import Bolt
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-# conn = psycopg2.connect(database="postgres", user="postgres", password="pass", host="localhost", port="5432")
-# conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
+conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 # #Create a Table
 # #The first step is to create a cursor. 
-# cur = conn.cursor()
+cur = conn.cursor()
 # cur.execute('DROP DATABASE IF EXISTS Tcount')
 # cur.execute('CREATE DATABASE Tcount')
 # cur.execute('DROP TABLE IF EXISTS Tweetwordcount')
@@ -35,11 +35,11 @@ class WordCounter(Bolt):
         # you need to create both the database and the table in advance.
         
         if (word in counts) == False:
-            cur.execute("INSERT INTO Tweetwordcount (word,count) \
+            cur.execute("INSERT INTO tweetwordcount (word,count) \
                   VALUES (word, 1)");
             conn.commit()
         else:
-            cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (count+1, word))
+            cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (count+1, word))
             conn.commit()
 
         # Increment the local count
@@ -49,4 +49,4 @@ class WordCounter(Bolt):
         # Log the count - just to see the topology running
         self.log('%s: %d' % (word, self.counts[word]))
 
-# conn.close()
+conn.close()
