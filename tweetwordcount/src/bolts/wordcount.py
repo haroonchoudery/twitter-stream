@@ -10,6 +10,7 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 #Create a Table
 #The first step is to create a cursor. 
 cur = conn.cursor()
+cur.execute('DROP DATABASE IF EXISTS Tcount')
 cur.execute('CREATE DATABASE Tcount')
 cur.execute('''CREATE TABLE Tweetwordcount
     (word TEXT PRIMARY KEY     NOT NULL,
