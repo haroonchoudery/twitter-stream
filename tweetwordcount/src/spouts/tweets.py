@@ -12,7 +12,7 @@ from streamparse.spout import Spout
 twitter_credentials = {
     "consumer_key"        :  "xI1HAahzW99fuitHnMuyuZ8fc",
     "consumer_secret"     :  "JddkBAIepqL9K8N3qDUF9w6JXOu0ieiXhxsQCRMPTv5UIZwomR",
-    "access_token"        :  "ykFBS4fXM83XqQTFq9uZ8T0o7WbKi0uu5HfdQ27H6",
+    "access_token"        :  "17651073-ykFBS4fXM83XqQTFq9uZ8T0o7WbKi0uu5HfdQ27H6",
     "access_token_secret" :  "E3VrnFHssSWOQRjAm8weSL5LM0qNK8OCQZViVBuhPMcKU",
 }
 
