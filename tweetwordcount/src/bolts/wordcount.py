@@ -34,7 +34,7 @@ class WordCounter(Bolt):
         # Table name: Tweetwordcount 
         # you need to create both the database and the table in advance.
 
-        if (word in self.counts) == False:
+        if (word in self.counts.keys()) == False:
             cur.execute("INSERT INTO tweetwordcount (word,count) VALUES (%s, %s)", (word, 1));
             conn.commit()
         else:
