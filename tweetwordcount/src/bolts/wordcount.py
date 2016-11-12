@@ -49,4 +49,4 @@ class WordCounter(Bolt):
         # Log the count - just to see the topology running
         self.log('%s: %d' % (word, self.counts[word]))
 
-conn.close()
+# conn.close()
