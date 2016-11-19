@@ -12,11 +12,13 @@ cur = conn.cursor()
 
 if __name__ == "__main__":
 	argword = sys.arg[1]
-	cur.execute("SELECT word, count from Tweetwordcount;")
-	records = cur.fetchall()
-	for rec in records:
-	   print "word = ", rec[0]
-	   print "count = ", rec[1], "\n"
-	conn.commit()
+
+	print argword
+	# cur.execute("SELECT word, count from Tweetwordcount;")
+	# records = cur.fetchall()
+	# for rec in records:
+	#    print "word = ", rec[0]
+	#    print "count = ", rec[1], "\n"
+	# conn.commit()
 
 conn.close()
