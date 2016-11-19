@@ -19,8 +19,7 @@ if __name__ == "__main__":
 
 	for rec in records:
 		if rec[0] == argword:
-		    print("word = ", rec[0])
-		    print("count = ", rec[1], "\n")
+		    print(rec)
 	
 	conn.commit()
 
