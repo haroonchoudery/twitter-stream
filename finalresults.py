@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
 	if not argword:
 		for rec in records:
-			print(rec "\n")
+			print("%s \n") % rec
 	else:
 		for rec in records:
 			if rec[0] == argword:
