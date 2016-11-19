@@ -13,13 +13,16 @@ cur = conn.cursor()
 if __name__ == "__main__":
 	argword = sys.argv[1]
 
-
 	cur.execute("SELECT word, count from Tweetwordcount")
 	records = cur.fetchall()
 
-	for rec in records:
-		if rec[0] == argword:
-		    print("Total number of occurences of '%s': %s" % (rec[0], rec[1]))
+	if not argword:
+		for rec in records:
+			print(rec "\n")
+	else:
+		for rec in records:
+			if rec[0] == argword:
+			    print("Total number of occurences of '%s': %s" % (rec[0], rec[1]))
 
 
 	
