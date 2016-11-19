@@ -14,11 +14,11 @@ if __name__ == "__main__":
 	argword = sys.argv[1]
 
 	print(argword)
-	# cur.execute("SELECT word, count from Tweetwordcount;")
-	# records = cur.fetchall()
-	# for rec in records:
-	#    print "word = ", rec[0]
-	#    print "count = ", rec[1], "\n"
-	# conn.commit()
+	cur.execute("SELECT word, count from Tweetwordcount;")
+	records = cur.fetchall()
+	for rec in records:
+	   print("word = ", rec[0])
+	   print("count = ", rec[1], "\n")
+	conn.commit()
 
 conn.close()
