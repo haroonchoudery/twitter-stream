@@ -20,8 +20,8 @@ if __name__ == "__main__":
 	for rec in records:
 		if rec[0] == argword:
 		    print(rec)
-	    else:
-	    	print("Word not found.")
+		else:
+			print("Word not found.")
 	
 	conn.commit()
 
