@@ -10,9 +10,8 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 
 cur = conn.cursor()
 
-if __name__ == "__main__":
-	
-	if len(sys.argv) > 0:
+if __name__ == "__main__":	
+	if len(sys.argv) > 1:
 		argword = sys.argv[1]
 
 	cur.execute("SELECT word, count from Tweetwordcount")
