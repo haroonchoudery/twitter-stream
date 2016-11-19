@@ -13,13 +13,15 @@ cur = conn.cursor()
 if __name__ == "__main__":
 	argword = sys.argv[1]
 
-	
+
 	cur.execute("SELECT word, count from Tweetwordcount")
 	records = cur.fetchall()
 
 	for rec in records:
 		if rec[0] == argword:
 		    print(rec)
+	    else:
+	    	print("Word not found.")
 	
 	conn.commit()
 
