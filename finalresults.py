@@ -11,7 +11,7 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 
 if __name__ == "__main__":
-	argword = "foo"
+	argword = foo
 
 	cur.execute('SELECT COUNT(*) FROM Tweetwordcount WHERE word = %s;' (argword))
 
