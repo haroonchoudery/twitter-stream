@@ -14,7 +14,7 @@ if __name__ == "__main__":
 	argword = sys.argv[1]
 
 	print(argword)
-	cur.execute("SELECT word, count from Tweetwordcount WHERE word = %s", argword)
+	cur.execute("SELECT word, count from Tweetwordcount WHERE word = %s" % argword)
 	records = cur.fetchall()
 
 	print(records)
