@@ -16,7 +16,7 @@ if __name__ == "__main__":
 	else:
 		argword = None
 
-	cur.execute("SELECT word, count from Tweetwordcount WHERE word ~ '[^0-9]'")
+	cur.execute("SELECT word, count from Tweetwordcount WHERE word ~ '[^\d\W]+'")
 	records = cur.fetchall()
 
 	if not argword:
