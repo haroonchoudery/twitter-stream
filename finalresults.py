@@ -12,7 +12,7 @@ cur = conn.cursor()
 
 if __name__ == "__main__":
 	
-	if sys.argv[1]:
+	if len(sys.argv) > 0:
 		argword = sys.argv[1]
 
 	cur.execute("SELECT word, count from Tweetwordcount")
