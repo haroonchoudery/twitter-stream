@@ -13,7 +13,7 @@ cur = conn.cursor()
 if __name__ == "__main__":
 	argword = sys.argv[0]
 
-	print argword
+	print(argword)
 	# cur.execute("SELECT word, count from Tweetwordcount;")
 	# records = cur.fetchall()
 	# for rec in records:
