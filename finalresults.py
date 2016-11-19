@@ -13,6 +13,8 @@ cur = conn.cursor()
 if __name__ == "__main__":	
 	if len(sys.argv) > 1:
 		argword = sys.argv[1]
+	else:
+		argword = None
 
 	cur.execute("SELECT word, count from Tweetwordcount")
 	records = cur.fetchall()
