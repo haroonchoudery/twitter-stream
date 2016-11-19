@@ -13,7 +13,7 @@ cur = conn.cursor()
 if __name__ == "__main__":
 	argword = sys.argv[1]
 
-	cur.execute('SELECT COUNT(*) FROM Tweetwordcount WHERE word = argword;')
+	cur.execute('SELECT COUNT(*) FROM Tweetwordcount WHERE word = %s'; (argword))
 
 
 conn.close()
