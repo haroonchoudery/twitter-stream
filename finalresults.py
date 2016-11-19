@@ -11,7 +11,9 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 
 if __name__ == "__main__":
-	argword = sys.argv[1]
+	
+	if sys.argv[1]:
+		argword = sys.argv[1]
 
 	cur.execute("SELECT word, count from Tweetwordcount")
 	records = cur.fetchall()
