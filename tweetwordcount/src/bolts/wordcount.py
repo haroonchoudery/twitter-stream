@@ -10,7 +10,7 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 # #The first step is to create a cursor. 
 cur = conn.cursor()
 
-dbname = 'Tcount'
+dbname = 'tcount'
 cur.execute('CREATE DATABASE ' + dbname)
 
 # cur.execute('DROP DATABASE IF EXISTS Tcount')
