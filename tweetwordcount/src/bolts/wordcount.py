@@ -12,11 +12,11 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 # cur.execute('DROP DATABASE IF EXISTS Tcount')
 # cur.execute('CREATE DATABASE Tcount')
-# cur.execute('DROP TABLE IF EXISTS Tweetwordcount')
-# cur.execute('''CREATE TABLE Tweetwordcount
-#     (word TEXT PRIMARY KEY     NOT NULL,
-#     count INT     NOT NULL);''')
-# conn.commit()
+cur.execute('DROP TABLE IF EXISTS Tweetwordcount')
+cur.execute('''CREATE TABLE Tweetwordcount
+     (word TEXT PRIMARY KEY     NOT NULL,
+     count INT     NOT NULL);''')
+ conn.commit()
 
 
 class WordCounter(Bolt):
