@@ -19,9 +19,9 @@ if __name__ == "__main__":
 
 	for rec in records:
 		if rec[0] == argword:
-		    print(rec)
-		else:
-			print("Word not found.")
+		    print("Total number of occurences of '%s': %s" % (rec[0], rec[1]))
+
+
 	
 	conn.commit()
 
