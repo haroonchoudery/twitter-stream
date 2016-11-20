@@ -25,7 +25,7 @@ if __name__ == "__main__":
 		print("Not all arguments given.")
 	else:
 		for rec in records:
-			if rec[1] >= mini & rec[1] <= maxi:
+			if int(rec[1]) >= mini & int(rec[1]) <= maxi:
 			    print("'%s': %s" % (rec[0], rec[1]))
 	
 	conn.commit()
