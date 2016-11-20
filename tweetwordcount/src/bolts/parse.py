@@ -37,7 +37,7 @@ class ParseTweet(Bolt):
             aword = word.strip("\"?><,'.:;)")
 
             # Make word lowercase
-            aword = aword.lower()
+            # aword = aword.lower()
 
             # now check if the word contains only ascii
             if len(aword) > 0 and ascii_string(word):
