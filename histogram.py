@@ -15,12 +15,13 @@ if __name__ == "__main__":
 		mini = sys.argv[1]
 		maxi = sys.argv[2]
 	else:
-		argword = None
+		mini = None
+		maxi = None
 
 	cur.execute("SELECT word, count from Tweetwordcount WHERE word ~ '^[a-zA-Z]+' ORDER BY word")
 	records = cur.fetchall()
 
-	if not argword:
+	if not mini | maxi:
 		print("Not all arguments given.")
 	else:
 		for rec in records:
