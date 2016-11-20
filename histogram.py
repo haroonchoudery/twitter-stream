@@ -21,7 +21,7 @@ if __name__ == "__main__":
 	cur.execute("SELECT word, count from Tweetwordcount WHERE word ~ '^[a-zA-Z]+' ORDER BY word")
 	records = cur.fetchall()
 
-	if not mini | maxi:
+	if not mini or maxi:
 		print("Not all arguments given.")
 	else:
 		for rec in records:
