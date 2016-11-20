@@ -19,8 +19,8 @@ cur = conn.cursor()
 # cur.execute('CREATE DATABASE Tcount')
 cur.execute('DROP TABLE IF EXISTS Tweetwordcount;')
 cur.execute('''CREATE TABLE Tweetwordcount
-     word TEXT PRIMARY KEY NOT NULL,
-     count INT NOT NULL);''')
+    (word TEXT PRIMARY KEY NOT NULL,
+    count INT NOT NULL);''')
 conn.commit()
 
 
