@@ -18,18 +18,15 @@ if __name__ == "__main__":
 		mini = None
 		maxi = None
 
-	print(mini)
-	print(maxi)
+	cur.execute("SELECT word, count from Tweetwordcount WHERE word ~ '^[a-zA-Z]+' ORDER BY word")
+	records = cur.fetchall()
 
-	# cur.execute("SELECT word, count from Tweetwordcount WHERE word ~ '^[a-zA-Z]+' ORDER BY word")
-	# records = cur.fetchall()
-
-	# if not mini or maxi:
-	# 	print("Not all arguments given.")
-	# else:
-	# 	for rec in records:
-	# 		if rec[1] >= mini:
-	# 		    print("'%s': %s" % (rec[0], rec[1]))
+	if not mini and maxi:
+		print("Not all arguments given.")
+	else:
+		for rec in records:
+			if rec[1] >= mini:
+			    print("'%s': %s" % (rec[0], rec[1]))
 	
 	conn.commit()
 
