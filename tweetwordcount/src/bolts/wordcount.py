@@ -17,8 +17,8 @@ cur = conn.cursor()
 
 # cur.execute('DROP DATABASE IF EXISTS Tcount')
 # cur.execute('CREATE DATABASE Tcount')
-cur.execute('DROP TABLE IF EXISTS tweetwordcount;')
-cur.execute('''CREATE TABLE tweetwordcount
+cur.execute('DROP TABLE Tweetwordcount;')
+cur.execute('''CREATE TABLE Tweetwordcount
     (word TEXT PRIMARY KEY NOT NULL,
     count INT NOT NULL);''')
 conn.commit()
@@ -40,10 +40,10 @@ class WordCounter(Bolt):
         # you need to create both the database and the table in advance.
 
         if (word in self.counts.keys()) == False:
-            cur.execute("INSERT INTO tweetwordcount (word,count) VALUES (%s, %s)", (word, 1));
+            cur.execute("INSERT INTO Tweetwordcount (word,count) VALUES (%s, %s)", (word, 1));
             conn.commit()
         else:
-            cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (self.counts[word] + 1, word))
+            cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (self.counts[word] + 1, word))
             conn.commit()
 
         # Increment the local count
