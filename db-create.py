@@ -1,7 +1,3 @@
-from __future__ import absolute_import, print_function, unicode_literals
-import sys
-from collections import Counter
-from streamparse.bolt import Bolt
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
