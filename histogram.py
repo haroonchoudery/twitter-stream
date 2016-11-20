@@ -11,23 +11,25 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 
 if __name__ == "__main__":	
-	if len(sys.argv) > 2:
-		mini = sys.argv[1]
-		maxi = sys.argv[2]
-	else:
-		mini = None
-		maxi = None
+	print(len(sys.argv))
 
-	cur.execute("SELECT word, count from Tweetwordcount WHERE word ~ '^[a-zA-Z]+' ORDER BY word")
-	records = cur.fetchall()
+# 	if len(sys.argv) > 2:
+# 		mini = sys.argv[1]
+# 		maxi = sys.argv[2]
+# 	else:
+# 		mini = None
+# 		maxi = None
 
-	if not mini or maxi:
-		print("Not all arguments given.")
-	else:
-		for rec in records:
-			if rec[1] >= int(mini) and rec[1] <= int(maxi):
-			    print("'%s': %s" % (rec[0], rec[1]))
+# 	cur.execute("SELECT word, count from Tweetwordcount WHERE word ~ '^[a-zA-Z]+' ORDER BY word")
+# 	records = cur.fetchall()
+
+# 	if not mini or maxi:
+# 		print("Not all arguments given.")
+# 	else:
+# 		for rec in records:
+# 			if rec[1] >= int(mini) and rec[1] <= int(maxi):
+# 			    print("'%s': %s" % (rec[0], rec[1]))
 	
-	conn.commit()
+# 	conn.commit()
 
-conn.close()
+# conn.close()
